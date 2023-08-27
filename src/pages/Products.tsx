@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 
 export default function Products() {
   const [data, setData] = useState<IProduct[]>([]);
+  
   useEffect(() => {
     fetch('./data.json')
       .then((res) => res.json())
