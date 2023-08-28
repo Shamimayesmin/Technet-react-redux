@@ -3,6 +3,7 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/components/ui/use-toast';
+import { useAppSelector } from '@/redux/hook';
 import { IProduct } from '@/types/globalTypes';
 import { useEffect, useState } from 'react';
 
@@ -17,12 +18,9 @@ export default function Products() {
 
   const { toast } = useToast();
 
-  //! Dummy Data
 
-  const status = true;
-  const priceRange = 100;
-
-  //! **
+  const {priceRange, status} = useAppSelector((state)=>state.product)
+ 
 
   const handleSlider = (value: number[]) => {
     console.log(value);
