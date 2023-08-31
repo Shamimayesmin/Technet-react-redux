@@ -15,7 +15,7 @@ export default function ProductCard({ product }: IProps) {
 
  
   const handleAddProduct = (product: IProduct) => {
-    // console.log(product);
+    console.log(product);
     dispatch(addToCart(product))
     toast({
       description: 'Product Added',
