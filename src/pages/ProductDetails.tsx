@@ -1,3 +1,4 @@
+// import ProductReview from '@/components/ProductReview';
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
 import { useSingleProductQuery } from '@/redux/api/apiSlice';
@@ -28,7 +29,7 @@ export default function ProductDetails() {
           <Button>Add to cart</Button>
         </div>
       </div>
-      <ProductReview />
+      <ProductReview id={id!}/>
     </>
   );
 }
