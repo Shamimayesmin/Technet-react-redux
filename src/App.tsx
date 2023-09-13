@@ -9,12 +9,14 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+//Get the currently signed-in user
 
     dispatch(setLoading(true))
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        dispatch(setUser(user.email));
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        dispatch(setUser(user.email!));
         dispatch(setLoading(false))
       }else{
         dispatch(setLoading(false))
